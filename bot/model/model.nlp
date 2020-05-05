@@ -1,0 +1,278 @@
+{
+  "settings": {
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": false,
+    "modelFileName": "model.nlp"
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "trainByDomain": false,
+          "useStemDict": true
+        },
+        "stemDict": {
+          "open,webview": {
+            "intent": "open.webview",
+            "domain": "default"
+          },
+          "hey": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hello": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "afternoon,good": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "good,morning": {
+            "intent": "greeting",
+            "domain": "default"
+          },
+          "hi": {
+            "intent": "greeting",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "open.webview": "default",
+          "greeting": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "Open webview",
+            "intent": "open.webview"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hey",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hello",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "ZALUPA",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Good morning",
+            "intent": "greeting"
+          },
+          {
+            "domain": "default",
+            "utterance": "Hi",
+            "intent": "greeting"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "open": 1,
+              "webview": 1,
+              "hey": 1,
+              "hello": 1,
+              "good": 1,
+              "afternoon": 1,
+              "morning": 1,
+              "hi": 1
+            },
+            "intents": {
+              "open.webview": 1,
+              "greeting": 1
+            },
+            "intentFeatures": {
+              "open.webview": [
+                "open",
+                "webview"
+              ],
+              "greeting": [
+                "hey",
+                "hello",
+                "good",
+                "afternoon",
+                "morning",
+                "hi"
+              ]
+            },
+            "featuresToIntent": {
+              "open": [
+                "open.webview"
+              ],
+              "webview": [
+                "open.webview"
+              ],
+              "hey": [
+                "greeting"
+              ],
+              "hello": [
+                "greeting"
+              ],
+              "good": [
+                "greeting"
+              ],
+              "afternoon": [
+                "greeting"
+              ],
+              "morning": [
+                "greeting"
+              ],
+              "hi": [
+                "greeting"
+              ]
+            },
+            "neuralNetwork": {
+              "features": [
+                "open",
+                "webview",
+                "hey",
+                "hello",
+                "good",
+                "afternoon",
+                "morning",
+                "hi",
+                "nonefeature"
+              ],
+              "intents": [
+                "open.webview",
+                "greeting",
+                "None"
+              ],
+              "perceptrons": [
+                [
+                  5.815199375152588,
+                  5.815199375152588,
+                  -0.86476069688797,
+                  -0.8609203696250916,
+                  -0.6592026352882385,
+                  -0.33920153975486755,
+                  -0.3200010061264038,
+                  -0.8560738563537598,
+                  -0.8519515991210938,
+                  0.8607969688453965
+                ],
+                [
+                  -3.1858551502227783,
+                  -3.1858551502227783,
+                  6.036596775054932,
+                  6.045011043548584,
+                  4.07162618637085,
+                  2.0378174781799316,
+                  2.0338079929351807,
+                  6.01536226272583,
+                  -6.198236465454102,
+                  6.387948547066174
+                ],
+                [
+                  -0.8747879862785339,
+                  -0.8747879862785339,
+                  -1.6811894178390503,
+                  -1.668154001235962,
+                  -1.1589683294296265,
+                  -0.5817237496376038,
+                  -0.5772440433502197,
+                  -1.6476223468780518,
+                  10.517962455749512,
+                  1.7491371479403333
+                ]
+              ],
+              "perceptronSettings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "Open webview"
+      ],
+      [
+        "en",
+        "Hey"
+      ],
+      [
+        "en",
+        "Hello"
+      ],
+      [
+        "en",
+        "Good afternoon"
+      ],
+      [
+        "en",
+        "Good morning"
+      ],
+      [
+        "en",
+        "Hi"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {}
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

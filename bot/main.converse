@@ -1,0 +1,17 @@
+@Event('start')
+start() {
+    > hello world
+}
+
+@Intent('open.webview', [
+    'Open webview'
+])
+openWebview() {
+    @Format('webview', {
+        url: '/webview/test.html',
+        button: 'View',
+        fbHeight: 'tall',
+        height: 100
+    })
+    > Ok, here is the webview
+}
